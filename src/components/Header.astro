@@ -1,0 +1,17 @@
+---
+import { Image } from "astro:assets";
+import Logo from "@assets/17-11.png"
+---
+<header class=" w-full fixed" >
+    <div class="h-20 max-w-screen-sm mx-auto px-4 bg-custom-bg bg-opacity-40 border-2 border-slate-700 flex items-center justify-around rounded-full mt-2 " >
+        <figure class="h-full py-2 " >
+            <Image src={Logo} alt="Logotipo de la agencia" class="h-full w-auto rounded-full mx-auto shadow-slate-700 shadow-sm cursor-pointer transition-all hover:scale-110 hover:shadow-slate-400" />
+        </figure>
+        <ul class="text-white text-xs md:text-base flex justify-center items-center flex-wrap gap-4 " >
+            <li class="transition-all hover:scale-105" ><a href="#" class="cursor-pointer hover:text-custom-hover " >Acerca de</a></li>
+            <li class="transition-all hover:scale-105" ><a href="#" class="cursor-pointer hover:text-custom-hover " >Proyectos</a></li>
+            <li class="transition-all hover:scale-105" ><a href="#" class="cursor-pointer hover:text-custom-hover " >Nosotros</a></li>
+            <li class="transition-all hover:scale-105" ><a href="#" class="cursor-pointer hover:text-custom-hover " >Contacto</a></li>
+        </ul>
+    </div>
+</header>
