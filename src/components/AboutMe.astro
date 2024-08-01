@@ -1,0 +1,26 @@
+<section class="w-full h-screen" >
+    <section class="max-w-screen-md h-3/5 mt-60  mx-auto">
+        <h1 class="text-slate-100 text-5xl font-bold font-mono mb-4" >Agencia 17-11</h1>
+        <p class="text-slate-300 text-xl font-sans" >
+            Agencia 17-11 ofrece soluciones de <span class="text-blue-500 font-bold">alta calidad en sitios web estáticos.</span>
+            Nuestro equipo está comprometido en hacer realidad tu 
+            diseño soñado y digitalisar tu proyecto en la web.
+        </p>
+        <button class="font-semibold px-4 py-2 bg-custom-bg text-slate-300 rounded-full border-2 border-white mt-8 transition-all active:bg-black " id="button_hover" >
+            Proyectos <span class="ml-2 hidden text-xl font-bold text-white" id="arrow_bottom" >↓</span>
+        </button>
+    </section>
+</section>
+<script>
+    const button_hover = document.getElementById('button_hover')
+    const arrow_bottom = document.getElementById('arrow_bottom')
+    button_hover?.addEventListener('mouseover', () => {
+            arrow_bottom?.classList.remove('hidden');
+            arrow_bottom?.classList.add('inline');
+        });
+
+        button_hover?.addEventListener('mouseout', () => {
+            arrow_bottom?.classList.remove('inline');
+            arrow_bottom?.classList.add('hidden');
+        });
+</script>
