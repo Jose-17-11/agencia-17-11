@@ -1,15 +1,15 @@
 ---
+import SEO from "@components/SEO.astro"
 import Header from "@components/Header.astro"
 import Footer from "@components/Footer.astro"
 ---
 <html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/17-11.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Agencia 17-11</title>
-	</head>
+	<SEO 
+		title="Agencia 17-11" 
+		description="Una agencia de desarrollo de paginas web estaticas, enfocada y especializada en landing pages, sitios coorporativos, etc." 
+		url="https://www.agencia1711.site/" 
+		image="../assets/17-11.png"
+	/>
 	<body class="bg-page-bg" >
         <Header />
         <main >
