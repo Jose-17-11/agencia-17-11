@@ -10,6 +10,16 @@ import Footer from "@components/Footer.astro"
 		url="https://www.agencia1711.site/" 
 		image="../assets/17-11.png"
 	/>
+
+	<!-- Google tag (gtag.js) -->
+	<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-GWF3MDEL1G"></script>
+	<script type="text/partytown" >
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-GWF3MDEL1G');
+	</script>
+
 	<body class="bg-page-bg" >
         <Header />
         <main >
