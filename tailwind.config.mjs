@@ -6,6 +6,7 @@ export default {
 			colors: {
 				'custom-bg': '#020617',
 				'custom-hover': '#6a89cc',
+				// 'custom-active': '#606878',
 				'page-bg': '#0b0e19'
 			}
 		},

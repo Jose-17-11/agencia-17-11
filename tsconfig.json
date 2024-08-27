@@ -4,8 +4,12 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
-      "@assets/*": ["src/assets/*"],
-      "@layouts/*": ["src/layouts/*"]
+      "@common/*": ["src/components/common/*"],
+      "@animations/*": ["src/components/animations/*"],
+      "@sectionsMain/*": ["src/components/sectionsMain/*"],
+      "@sectionsBlog/*": ["src/components/sectionsBlog/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@assets/*": ["src/assets/*"]
     }
   },
 }

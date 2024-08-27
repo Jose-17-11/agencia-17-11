@@ -2,10 +2,10 @@
 import { Image } from "astro:assets";
 import TrabajoToa from "@assets/trabajo_toa.png"
 import TrabajoSurf from "@assets/trabajo_surf.png"
-import Button from "./Button.astro";
+import Button from "@common/Button.astro";
 ---
 <div class="w-full flex flex-col items-center gap-4 md:flex-row md:items-stretch" >      
-    <article class="w-4/5 md:h-1/2 flex flex-col gap-y-3 md:gap-y-0 h-auto " >
+    <article class="w-4/5 md:h-1/2 flex flex-col gap-y-3 md:gap-y-0 h-auto" >
         <figure>
             <Image src={TrabajoToa} alt="Pagina web externa de Transportation of america" class="w-full object-cover rounded-xl" />
         </figure>
@@ -15,13 +15,13 @@ import Button from "./Button.astro";
             Abrir
         </Button>
     </article>
-    <article class="w-4/5 md:h-1/2 flex flex-col justify-stretch gap-y-3 " >
+    <article class="w-4/5 md:h-1/2 flex flex-col gap-y-3 justify-stretch" >
         <figure>
             <Image src={TrabajoSurf} alt="Pagina web externa de Surf web" class="w-full object-cover rounded-xl" />
         </figure>
         <h3 class="text-slate-200 text-3xl font-bold">Surf web</h3>
         <p class="text-slate-400 text-xl">Brinda servicios de Marketing, diseño y publicidad a cualquier negocio que busca adentrarse al mundo digital.</p>
-        <Button url="https://surf-web-astro.vercel.app/" class="text-slate-200 font-semibold py-2 px-4 w-32 bg-blue-700 rounded-3xl" >
+        <Button url="https://surf-web-astro.pages.dev/" class="text-slate-200 font-semibold py-2 px-4 w-32 bg-blue-700 rounded-3xl" >
             Abrir
         </Button>
     </article>
