@@ -55,7 +55,7 @@
                         type="text"
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
-                        onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+                        onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                         className="flex-1 p-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="Type your message..."
                     />
