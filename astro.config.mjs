@@ -4,9 +4,11 @@ import tailwind from "@astrojs/tailwind";
 
 import partytown from "@astrojs/partytown";
 
+import react from '@astrojs/react';
+
 // https://astro.build/config
 export default defineConfig({
-  output: 'hybrid',
+  output: 'server',
   adapter: cloudflare(),
-  integrations: [tailwind(), partytown()]
+  integrations: [tailwind(), partytown(), react()]
 });
