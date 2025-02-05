@@ -10,5 +10,10 @@ import react from '@astrojs/react';
 export default defineConfig({
   output: 'server',
   adapter: cloudflare(),
+  vite: {
+    build: {
+      minify: false,
+    },
+  },
   integrations: [tailwind(), partytown(), react()]
 });
