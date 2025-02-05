@@ -3,6 +3,6 @@ import Main from "@layouts/Main.astro"
 import Chatbot from "@components/Chatbot.jsx"
 export const prerender = true
 ---
-<Main>
+<Main is:inline >
     <Chatbot client:load />
 </Main>
