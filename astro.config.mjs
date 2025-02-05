@@ -15,5 +15,15 @@ export default defineConfig({
       minify: false,
     },
   },
-  integrations: [tailwind(), partytown(), react()]
+  integrations: [
+    tailwind(), 
+    partytown(), 
+    react({
+      // Utilizar el renderizador de React para entornos Edge
+      jsxImportSource: 'react',
+      jsxRuntime: 'automatic',
+      reactRuntime: 'automatic',
+      reactServer: true,
+    }),
+  ]
 });
