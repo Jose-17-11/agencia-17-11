@@ -12,3 +12,4 @@ entry-point = "workers-site"
 [build]
 command = "npm run build"
 upload_format = "modules"
+pages_build_output_dir = "./dist"
