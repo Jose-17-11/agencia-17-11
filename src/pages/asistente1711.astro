@@ -1,6 +1,7 @@
 ---
 import Main from "@layouts/Main.astro"
 import Chatbot from "@components/Chatbot.jsx"
+export const prerender = true
 ---
 <Main>
     <Chatbot client:load />
