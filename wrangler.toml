@@ -1,15 +1,11 @@
 name = "agencia 17-11"
-type = "javascript"
 account_id = "your-account-id"
 workers_dev = true
-route = ""
-zone_id = ""
 
 [site]
 bucket = "./dist"
-entry-point = "workers-site"
 
 [build]
 command = "npm run build"
-upload_format = "modules"
-pages_build_output_dir = "./dist"
+
+main = "workers-site/index.js"
