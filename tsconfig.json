@@ -10,6 +10,9 @@
       "@sectionsBlog/*": ["src/components/sectionsBlog/*"],
       "@layouts/*": ["src/layouts/*"],
       "@assets/*": ["src/assets/*"]
-    }
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
   },
+  
 }
