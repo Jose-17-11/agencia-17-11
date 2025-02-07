@@ -4,6 +4,7 @@ import showdown from 'showdown';
 const Chatbot = () => {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState('');
+    const [isBotTyping, setIsBotTyping] = useState(false);
 
     const converter = new showdown.Converter();
 
@@ -12,7 +13,10 @@ const Chatbot = () => {
         if (input.trim() === '') return;
 
         const userMessage = { sender: 'user', text: input };
-        setMessages([...messages, userMessage]);
+
+        setMessages((prevMessages) => [...prevMessages, userMessage]);
+
+        setIsBotTyping(true);
 
         try {
             const response = await fetch('https://api-server.agencia1711.site/api-openai', {
@@ -29,9 +33,16 @@ const Chatbot = () => {
 
             const data = await response.json();
             const botMessage = { sender: 'bot', text: data.content };
-            setMessages([...messages, userMessage, botMessage]);
+
+            setMessages((prevMessages) => [
+                ...prevMessages,
+                botMessage
+            ]);
+
+            setIsBotTyping(false);
         } catch (error) {
             console.error('Error fetching response from API:', error);
+            setIsBotTyping(false);
         }
     };
 
@@ -51,6 +62,11 @@ const Chatbot = () => {
                         }}
                     />
                 ))}
+                {isBotTyping && (
+                    <div className="p-2 my-2 text-sm rounded-lg bg-gray-100 text-gray-900 text-left relative">
+                        <i className='absolute right-2 animate-bounce transition-all text-2xl' >...</i>
+                    </div>
+                )}
             </div>
             <div className="flex gap-2">
                 <input
@@ -59,7 +75,7 @@ const Chatbot = () => {
                     onChange={(e) => setInput(e.target.value)}
                     onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                     className="flex-1 p-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Type your message..."
+                    placeholder="Ingrese su mensaje..."
                 />
                 <button
                     onClick={handleSend}
