@@ -63,7 +63,7 @@ const Chatbot = () => {
                     />
                 ))}
                 {isBotTyping && (
-                    <div className="p-2 my-2 text-sm rounded-lg bg-gray-100 text-gray-900 text-left relative">
+                    <div className="h-10 w-10 p-2 my-2 ml-auto text-sm rounded-2xl bg-gray-200 text-gray-900 relative">
                         <i className='absolute right-2 animate-bounce transition-all text-2xl' >...</i>
                     </div>
                 )}
