@@ -69,12 +69,16 @@ const Chatbot = () => {
                 )}
             </div>
             <div className="flex gap-2">
-                <input
-                    type="text"
+                <textarea
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                    onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                    className="flex-1 p-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter' && !e.shiftKey) {
+                            e.preventDefault(); // Evita el comportamiento de enviar formulario
+                            setInput((prev) => prev + "\n"); // Agrega un salto de línea
+                        }
+                    }}
+                    className="flex-1 px-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none overflow-y-auto"
                     placeholder="Ingrese su mensaje..."
                 />
                 <button
