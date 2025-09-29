@@ -1,9 +1,77 @@
 ---
+import '@n8n/chat/style.css';
 import Main from "@layouts/Main.astro"
 import AboutMe from "@sectionsMain/AboutMe.astro"
 import Trabajos from "@sectionsMain/Trabajos.astro"
+import ChatbotEmbed from "@components/react/ChatbotEmbed.jsx" 
 ---
 <Main>
 	<AboutMe />
 	<Trabajos />
+	<ChatbotEmbed client:load />
 </Main>
+<style is:global>
+  :root {
+    /* ---------------------------------------------------- */
+    /* 1. COLORES BASE PARA COINCIDIR CON LA LANDING OSCURA */
+    /* ---------------------------------------------------- */
+    --chat--color-primary: #06B6D4; /* 🟦 Nuevo Acento: Azul Eléctrico (Cyan 500) */
+    --chat--color-secondary: #0D9488; /* Acento secundario (si se usa) */
+    --chat--color-dark: #1E1E1E;   /* Fondo Profundo: Casi Negro */
+    --chat--color-light: #F3F4F6;  /* Texto Principal: Blanco/Gris claro */
+	--chat--color-typing: #06B6D4;
+    
+    /* ---------------------------------------------------- */
+    /* 2. VENTANA, ENCABEZADO Y CUERPO (FONDOS) */
+    /* ---------------------------------------------------- */
+    
+    /* Fondo del encabezado y área de input */
+    --chat--header--background: var(--chat--color-dark);
+    --chat--header--color: var(--chat--color-light); 
+
+    /* Fondo del cuerpo (el área donde se escriben los mensajes) */
+    --chat--body--background: #252526; 
+
+    /* Input y Footer tienen el mismo fondo */
+    --chat--input--background: var(--chat--color-dark);
+    --chat--footer--background: var(--chat--color-dark);
+    --chat--input--text-color: var(--chat--color-light);
+    
+    /* ---------------------------------------------------- */
+    /* 3. MENSAJES (BURBUJAS) */
+    /* ---------------------------------------------------- */
+    
+    /* Mensajes del BOT (a la izquierda) */
+    --chat--message--bot--background: #374151; /* Burbuja en tono oscuro diferente al fondo */
+    --chat--message--bot--color: var(--chat--color-light); /* Texto claro */
+    
+    /* Mensajes del USUARIO (a la derecha) */
+    --chat--message--user--background: var(--chat--color-primary); /* Acento Azul Eléctrico */
+    --chat--message--user--color: #1E1E1E; /* Texto oscuro sobre azul */
+    
+    /* ---------------------------------------------------- */
+    /* 4. BOTÓN FLOTANTE Y HOVER (SIN ROJO NI VERDE) */
+    /* ---------------------------------------------------- */
+    
+    /* Botón flotante */
+    --chat--toggle--background: var(--chat--color-primary); /* Azul Eléctrico */
+    --chat--toggle--color: var(--chat--color-dark); /* Ícono oscuro */
+    
+    /* 🛑 HOVER: Usamos un tono más oscuro del azul para el efecto hover (sin rojo) */
+    --chat--toggle--hover--background: #0891B2; /* Tono más oscuro de Azul/Cyan */
+    
+    /* ACTIVO: Tono todavía más oscuro */
+    --chat--toggle--active--background: #0E7490;
+
+    /* Redondeo */
+    --chat--toggle--border-radius: 8px; 
+    --chat--window--border-radius: 1rem;
+    --chat--message--border-radius: 0.75rem;
+
+  }
+  .n8n-chat-widget .n8n-chat-title-text {
+    font-weight: bold !important; /* Haz el título más grueso (Bold) */
+    letter-spacing: 0.05em;      /* Un poco de espacio entre letras */
+    text-transform: uppercase;   /* Opcional: poner el texto en mayúsculas */
+  }
+</style>
