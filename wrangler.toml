@@ -1,0 +1,6 @@
+# wrangler.toml
+
+# Configuración básica (necesaria para el adaptador de Astro)
+name = "agencia-17-11"
+main = "./dist/_worker.js"
+compatibility_date = "2025-05-18"  # O una fecha más reciente
