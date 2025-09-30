@@ -10,7 +10,6 @@ const CreateChatComponent = () => {
   useEffect(() => {
 		createChat({
 			webhookUrl: N8N_CHAT_WEBHOOK,
-      theme: "#06B6D4", 
       initialMessages: [
         '¡Hola! Soy el Asistente de Agencia 17-11. 🚀',
         'Estoy aquí para responder preguntas sobre nuestros servicios, portafolio y precios.'

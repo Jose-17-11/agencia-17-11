@@ -1,0 +1,98 @@
+---
+// src/components/ContactoForm.astro
+const WEBHOOK_URL = "YOUR_N8N_WEBHOOK_URL_HERE"; // 🛑 Reemplaza esto después con la URL real de n8n
+
+// Usaremos un script de cliente para manejar la serialización y el envío asíncrono.
+// El script está encapsulado en <script> para que Astro lo compile y cargue correctamente.
+---
+
+<form id="contactForm" class="mx-auto p-8 rounded-lg shadow-2xl bg-[#1E1E1E]">
+    <div class="mb-5">
+        <label for="nombre" class="block mb-2 text-sm font-medium text-gray-300">Nombre Completo</label>
+        <input type="text" id="nombre" name="nombre" required 
+               class="bg-[#252526] border border-gray-600 text-gray-100 text-sm rounded-lg focus:ring-[#06B6D4] focus:border-[#06B6D4] block w-full p-2.5 transition-colors duration-300"
+               placeholder="José Manuel"
+        />
+    </div>
+    <div class="mb-5">
+        <label for="email" class="block mb-2 text-sm font-medium text-gray-300">Correo Electrónico</label>
+        <input type="email" id="email" name="email" required 
+               class="bg-[#252526] border border-gray-600 text-gray-100 text-sm rounded-lg focus:ring-[#06B6D4] focus:border-[#06B6D4] block w-full p-2.5 transition-colors duration-300"
+               placeholder="tu.correo@ejemplo.com"
+        />
+    </div>
+    <div class="mb-5">
+        <label for="telefono" class="block mb-2 text-sm font-medium text-gray-300">Teléfono (WhatsApp)</label>
+        <input type="tel" id="telefono" name="telefono" 
+               class="bg-[#252526] border border-gray-600 text-gray-100 text-sm rounded-lg focus:ring-[#06B6D4] focus:border-[#06B6D4] block w-full p-2.5"
+               placeholder="+52 55 1234 5678"
+        />
+    </div>
+    <div class="mb-5">
+        <label for="mensaje" class="block mb-2 text-sm font-medium text-gray-300">Describe tu Proyecto</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required 
+                  class="bg-[#252526] border border-gray-600 text-gray-100 text-sm rounded-lg focus:ring-[#06B6D4] focus:border-[#06B6D4] block w-full p-2.5 resize-none"
+                  placeholder="Necesito una landing page con un formulario de citas..."
+        ></textarea>
+    </div>
+    <button type="submit" id="submitButton"
+            class="w-full text-white bg-[#06B6D4] hover:bg-[#0891B2] focus:ring-4 focus:outline-none focus:ring-[#06B6D4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors duration-300 shadow-md shadow-[#06B6D4]/30"
+    >
+        Enviar Solicitud
+    </button>
+
+    <p id="formStatus" class="mt-4 text-center text-sm font-medium"></p>
+</form>
+
+<script is:inline >
+    document.getElementById('contactForm')?.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const form = e.target;
+        const button = document.getElementById('submitButton');
+        const statusMessage = document.getElementById('formStatus');
+        const webhookUrl = "https://n8n-produccion.agencia1711.lat/webhook/agencia1711-webhook-form"; // 🛑 Asegúrate de reemplazar esto
+
+        // 1. Deshabilitar y mostrar estado
+        if (!button || !statusMessage) return;
+        button.disabled = true;
+        button.textContent = 'Enviando...';
+        statusMessage.className = 'mt-4 text-center text-sm font-medium text-[#06B6D4]';
+        statusMessage.textContent = 'Procesando tu solicitud...';
+
+        // 2. Serializar datos del formulario a JSON
+        const formData = new FormData(form);
+        const data = {};
+        formData.forEach((value, key) => (data[key] = value));
+
+        try {
+            const response = await fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok || response.status === 200) {
+                // Éxito
+                statusMessage.className = 'mt-4 text-center text-sm font-medium text-[#A3E635]'; // Verde Lima para éxito
+                statusMessage.textContent = '¡Mensaje enviado con éxito! Te contactaremos pronto. ✅';
+                form.reset();
+            } else {
+                // Fallo del webhook (aunque la petición fue al servidor)
+                statusMessage.className = 'mt-4 text-center text-sm font-medium text-red-500';
+                statusMessage.textContent = 'Hubo un error al enviar el formulario. Intenta de nuevo. ❌';
+            }
+        } catch (error) {
+            // Fallo de conexión o red
+            statusMessage.className = 'mt-4 text-center text-sm font-medium text-red-500';
+            statusMessage.textContent = 'Error de conexión. Verifica tu red e intenta más tarde. 🌐';
+            console.error('Error en el envío del formulario:', error);
+        } finally {
+            // 3. Volver a habilitar
+            button.disabled = false;
+            button.textContent = 'Enviar Solicitud';
+        }
+    });
+</script>
