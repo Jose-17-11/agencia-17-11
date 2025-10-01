@@ -3,7 +3,7 @@
 const WEBHOOK_URL = "YOUR_N8N_WEBHOOK_URL_HERE"; // 🛑 Reemplaza esto después con la URL real de n8n
 
 // Usaremos un script de cliente para manejar la serialización y el envío asíncrono.
-// El script está encapsulado en <script> para que Astro lo compile y cargue correctamente.
+// El script está encapsulado en <script is:inline > para que Astro lo compile y cargue correctamente.
 ---
 
 <form id="contactForm" class="mx-auto p-8 rounded-lg shadow-2xl bg-[#1E1E1E]">
@@ -11,7 +11,7 @@ const WEBHOOK_URL = "YOUR_N8N_WEBHOOK_URL_HERE"; // 🛑 Reemplaza esto después
         <label for="nombre" class="block mb-2 text-sm font-medium text-gray-300">Nombre Completo</label>
         <input type="text" id="nombre" name="nombre" required 
                class="bg-[#252526] border border-gray-600 text-gray-100 text-sm rounded-lg focus:ring-[#06B6D4] focus:border-[#06B6D4] block w-full p-2.5 transition-colors duration-300"
-               placeholder="José Manuel"
+               placeholder="tu nombre"
         />
     </div>
     <div class="mb-5">
@@ -43,7 +43,7 @@ const WEBHOOK_URL = "YOUR_N8N_WEBHOOK_URL_HERE"; // 🛑 Reemplaza esto después
 
     <p id="formStatus" class="mt-4 text-center text-sm font-medium"></p>
 </form>
-
+<!-- Script que consume la api y realiza el envio de datos del formulario al webhook en n8n -->
 <script is:inline >
     document.getElementById('contactForm')?.addEventListener('submit', async function (e) {
         e.preventDefault();
@@ -51,7 +51,7 @@ const WEBHOOK_URL = "YOUR_N8N_WEBHOOK_URL_HERE"; // 🛑 Reemplaza esto después
         const form = e.target;
         const button = document.getElementById('submitButton');
         const statusMessage = document.getElementById('formStatus');
-        const webhookUrl = "https://n8n-produccion.agencia1711.lat/webhook/agencia1711-webhook-form"; // 🛑 Asegúrate de reemplazar esto
+        const webhookUrl = "https://n8n-produccion.agencia1711.lat/webhook/agencia1711-webhook-form";
 
         // 1. Deshabilitar y mostrar estado
         if (!button || !statusMessage) return;
