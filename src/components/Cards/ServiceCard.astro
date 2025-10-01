@@ -1,0 +1,23 @@
+---
+// Props estáticas iniciales (luego las tiparemos con TypeScript)
+// NOTA: Usa un ícono SVG relevante aquí. Por ahora, un simple texto para el ícono.
+const { title, description, icon } = Astro.props;
+---
+<div class="p-6 md:p-8 border border-slate-700 bg-custom-bg bg-opacity-40 rounded-xl shadow-lg transition-all duration-300 hover:shadow-slate-600 hover:scale-[1.02] flex flex-col justify-start items-start text-white h-full">
+    
+    <div class="w-12 h-12 bg-custom-hover text-slate-900 rounded-full flex items-center justify-center text-xl mb-4 font-bold">
+        {icon}
+    </div>
+
+    <h3 class="text-xl md:text-2xl font-bold mb-3 text-custom-hover">
+        {title}
+    </h3>
+
+    <p class="text-sm md:text-base text-gray-300 flex-grow">
+        {description}
+    </p>
+
+    <a href="/#contacto" class="mt-4 text-xs font-semibold py-2 px-4 border border-custom-hover text-custom-hover rounded-full transition-colors hover:bg-custom-hover hover:text-slate-900">
+        ¡Hablemos de tu Proyecto!
+    </a>
+</div>

@@ -1,16 +1,20 @@
 ---
+// importacion de layout y componentes
 import Main from "@layouts/Main.astro"
 import AboutMe from "@sectionsMain/AboutMe.astro"
 import Trabajos from "@sectionsMain/Trabajos.astro"
-import ChatbotEmbed from "@components/react/ChatbotEmbed.jsx" 
-import ContactoSection from '@components/Contact/ContactoSection.astro';
+import Servicios from "@sectionsMain/Servicios.astro"
+import ContactoSection from '@sectionsMain/ContactoSection.astro';
 
+import ChatbotEmbed from "@components/react/ChatbotEmbed.jsx" 
+// importacion de estilos globales
 import ChatbotStyles from '@components/styles/ChatbotStyles.astro'; 
 ---
 <ChatbotStyles />
 <Main>
   <AboutMe />
 	<Trabajos />
-	<ChatbotEmbed client:load />
+  <Servicios />
 	<ContactoSection />
+  <ChatbotEmbed client:load />
 </Main>

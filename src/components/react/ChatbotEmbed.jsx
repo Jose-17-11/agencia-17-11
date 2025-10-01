@@ -44,7 +44,7 @@ const CreateChatComponent = () => {
     });
 	}, []);
 
-	return (<div className='rounded-xl' ></div>);
+	return (<div></div>);
 };
 
 export default CreateChatComponent;

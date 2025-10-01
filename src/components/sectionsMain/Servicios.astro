@@ -1,0 +1,59 @@
+---
+import ServiceCard from "@components/Cards/ServiceCard.astro";
+
+// ⭐️ DATOS ESTÁTICOS INICIALES
+// Este array es el que luego refactorizaremos para que sea dinámico (props)
+const services = [
+    {
+        icon: "💻", // Icono: Portátil
+        title: "Landing Pages de Alto Impacto",
+        description: "Diseñamos y desarrollamos páginas de aterrizaje ultrarrápidas y optimizadas para la conversión. Enfoque 100% en captar leads y generar ventas desde el primer clic."
+    },
+    {
+        icon: "🏢", // Icono: Edificio/Oficina
+        title: "Webs Corporativas y Blogs",
+        description: "Construye tu presencia digital profesional. Entregamos sitios web que proyectan confianza, informan y escalan tu marca, incluyendo secciones de blog para contenido SEO."
+    },
+    {
+        icon: "🛒", // Icono: Carrito de Compras
+        title: "Tiendas en Línea Personalizadas",
+        description: "Soluciones de comercio electrónico robustas y flexibles. Desde catálogos simples hasta sistemas de inventario complejos, adaptados a tus reglas de negocio únicas."
+    },
+    {
+        icon: "⚙️", // Icono: Engranaje/Ajustes
+        title: "Automatización con Google Services",
+        description: "Conecta tu sitio web con Google Sheets, Calendar y Drive. Automatiza la gestión de citas, reportes y almacenamiento de datos, eliminando el trabajo manual recurrente."
+    },
+    {
+        icon: "🧠", // Icono: Cerebro/Inteligencia
+        title: "Sistemas Web a Medida (SaaS/CMS)",
+        description: "Desarrollo de soluciones de software escalables. Creamos herramientas internas, paneles de administración (CMS) o sistemas complejos para manejar procesos únicos de tu empresa."
+    },
+    {
+        icon: "🔄", // Icono: Flechas de Sincronización
+        title: "Integración de Sistemas Existentes",
+        description: "Conectamos tu nueva web o sistema personalizado con tus herramientas actuales (CRMs, APIs externas, bases de datos), asegurando un flujo de trabajo sin interrupciones."
+    }
+];
+---
+
+<section id="servicios" class="py-16 md:py-24 max-w-screen-xl mx-auto px-4">
+    <div class="text-center mb-12 md:mb-16">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">
+            Soluciones Digitales, no solo herramientas.
+        </h2>
+        <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
+            Transformamos tus ideas en presencia digital efectiva y procesos automatizados.
+        </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map(service => (
+            <ServiceCard 
+                title={service.title} 
+                description={service.description} 
+                icon={service.icon} 
+            />
+        ))}
+    </div>
+</section>
