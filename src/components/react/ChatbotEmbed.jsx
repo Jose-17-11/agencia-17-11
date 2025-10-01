@@ -1,5 +1,3 @@
-// src/components/react/createChatComponent.jsx
-import '@n8n/chat/style.css';
 import { useEffect, useRef } from 'react';
 import { createChat } from '@n8n/chat';
 

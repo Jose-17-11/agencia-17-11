@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import showdown from 'showdown';
+// Este componente esta pausado temporalmente hasta que se implemente un chatbot mediante webhook y no mediante embebido
 
 const Chatbot = () => {
     const [messages, setMessages] = useState([]);

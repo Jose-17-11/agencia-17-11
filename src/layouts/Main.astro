@@ -1,8 +1,18 @@
 ---
+// Importaciones de componentes
 import SEO from "@components/SEO.astro"
 import Header from "@common/Header.astro"
 import Footer from "@common/Footer.astro"
+
+// Contenido del Header dinamico
+const headerNavItems = [
+    { url: "/#about", text: "Acerca de" },
+    { url: "/#proyectos", text: "Proyectos" },
+    { url: "/#servicios", text: "Servicios" },
+    { url: "/#contacto", text: "Contacto" },
+];
 ---
+<!-- Código del layout principal -->
 <html lang="es">
 	<SEO 
 		title="Agencia 17-11" 
@@ -19,9 +29,9 @@ import Footer from "@common/Footer.astro"
 		gtag('js', new Date());
 		gtag('config', 'G-GWF3MDEL1G');
 	</script>
-
+	<!-- Cuerpo del codigo central del layout -->
 	<body class="bg-page-bg" >
-        <Header />
+        <Header navItems={headerNavItems} />
         <main >
             <slot />
         </main>
