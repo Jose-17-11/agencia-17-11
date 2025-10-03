@@ -4,6 +4,12 @@ import SEO from "@components/SEO.astro"
 import Header from "@common/Header.astro"
 import Footer from "@common/Footer.astro"
 
+interface Props {
+    title: string;
+}
+
+const { title = "Agencia 17-11" } = Astro.props as Props;
+
 // Contenido del Header dinamico
 const headerNavItems = [
     { url: "/#about", text: "Acerca de" },
@@ -11,11 +17,13 @@ const headerNavItems = [
     { url: "/#servicios", text: "Servicios" },
     { url: "/#contacto", text: "Contacto" },
 ];
+
+
 ---
 <!-- Código del layout principal -->
 <html lang="es">
 	<SEO 
-		title="Agencia 17-11" 
+		title={title} 
 		description="Una agencia de desarrollo de paginas web estaticas, enfocada y especializada en landing pages, sitios coorporativos, etc." 
 		url="https://www.agencia1711.site/" 
 		image="../assets/17-11.png"

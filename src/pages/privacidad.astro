@@ -1,0 +1,77 @@
+---
+// src/pages/privacidad.astro
+import Layout from '@layouts/Main.astro';
+---
+
+<Layout title="Política de Privacidad | Agencia 1711">
+    <div class="max-w-4xl mt-16 mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-extrabold text-gray-200 sm:text-4xl mb-6">
+            Política de Privacidad
+        </h1>
+        <p class="text-sm text-gray-300 mb-8">
+            Última actualización: 2 de Octubre de 2025
+        </p>
+
+        <article class="space-y-8 text-gray-300 leading-relaxed">
+            
+            <section id="introduccion">
+                <h2 class="text-2xl font-semibold text-gray-200 mb-3">1. Introducción</h2>
+                <p>
+                    Bienvenido a **Agencia 1711** (<a href="https://agencia1711.lat" class="text-indigo-600 hover:text-indigo-800">https://agencia1711.lat</a>). Valoramos su privacidad y la protección de su información personal. Esta política describe cómo recopilamos, utilizamos y protegemos la información que obtenemos a través de nuestros servicios de automatización e integración.
+                </p>
+            </section>
+
+            <section id="recopilacion-datos">
+                <h2 class="text-2xl font-semibold text-gray-200 mb-3">2. Recopilación de Información</h2>
+                <h3 class="text-xl font-medium text-gray-200 mt-5 mb-2">2.1. Datos de Contacto</h3>
+                <p>
+                    Recopilamos información personal que usted nos proporciona directamente al solicitar nuestros servicios o contactarnos, incluyendo, pero no limitado a: nombre, dirección de correo electrónico, número de teléfono y detalles sobre su proyecto.
+                </p>
+
+                <h3 class="text-xl font-medium text-gray-200 mt-5 mb-2">2.2. Uso de Cookies y Tecnologías Similares</h3>
+                <p>
+                    Nuestro sitio web puede utilizar cookies para mejorar la experiencia del usuario y analizar el tráfico del sitio. Estas cookies pueden ser de terceros, incluyendo Google Analytics, para fines de medición y rendimiento. Usted puede configurar su navegador para rechazar todas o algunas cookies.
+                </p>
+            </section>
+
+            <section id="integracion-google">
+                <h2 class="text-2xl font-semibold text-gray-200 mb-3">3. Uso y Autorización de Servicios de Google (OAuth 2.0)</h2>
+                <p>
+                    Para proveer nuestros servicios de automatización (a través de plataformas como n8n), requerimos acceder a sus datos en servicios de terceros, predominantemente Google Sheets, Google Drive o Gmail, mediante el proceso de **OAuth 2.0**.
+                </p>
+                <ul class="list-disc list-inside ml-4 space-y-2">
+                    <li>
+                        <strong>Datos de Acceso:</strong> Al autenticarse, usted nos concede acceso mediante **tokens de OAuth 2.0** a los servicios específicos de Google que sean necesarios para el funcionamiento de la automatización contratada (por ejemplo, para "ver y editar sus hojas de cálculo de Google Drive").
+                    </li>
+                    <li>
+                        <strong>Finalidad:</strong> Estos tokens y los datos a los que dan acceso se utilizan **única y exclusivamente** para ejecutar las automatizaciones y flujos de trabajo acordados.
+                    </li>
+                    <li>
+                        <strong>Almacenamiento:</strong> Los tokens de acceso son almacenados de forma segura en nuestra plataforma (n8n) y son tratados como información confidencial.
+                    </li>
+                    <li>
+                        <strong>Uso Limitado:</strong> Garantizamos que el uso de los datos obtenidos de los servicios de Google está limitado y se adhiere a la <a href="https://developers.google.com/terms/api-services-user-data-policy?hl=es-419" target="_blank" class="text-indigo-600 hover:text-indigo-800">Política de Datos de Usuario de Servicios de API de Google</a>. **No compartiremos, transferiremos ni venderemos** sus datos de Google a terceros.
+                    </li>
+                </ul>
+            </section>
+
+            <section id="derechos-usuario">
+                <h2 class="text-2xl font-semibold text-gray-200 mb-3">4. Derechos del Usuario</h2>
+                <p>
+                    Usted tiene derecho a acceder, rectificar, limitar o eliminar la información personal y los tokens de acceso que mantenemos. Para ejercer estos derechos, o si tiene preguntas sobre nuestra Política de Privacidad, puede contactarnos a la dirección proporcionada a continuación.
+                </p>
+            </section>
+
+            <section id="contacto">
+                <h2 class="text-2xl font-semibold text-gray-200 mb-3">5. Contacto</h2>
+                <p>
+                    Si tiene alguna pregunta sobre esta Política de Privacidad o el manejo de sus datos, por favor, póngase en contacto con nosotros:
+                </p>
+                <address class="not-italic mt-2">
+                    **Correo electrónico:** agencia1711@gmail.com<br>
+                    **Sitio web:** <a href="https://agencia1711.lat" class="text-indigo-600 hover:text-indigo-800">https://agencia1711.lat</a>
+                </address>
+            </section>
+        </article>
+    </div>
+</Layout>
