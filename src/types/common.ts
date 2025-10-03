@@ -4,3 +4,10 @@ export interface NavItem {
     url: string;
     text: string;
 }
+
+export interface SeoProps {
+    title: string;
+    description: string;
+    url: string;
+    image: string;
+}
