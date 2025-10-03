@@ -5,6 +5,7 @@ export interface NavItem {
     text: string;
 }
 
+// Interfaz para las propiedades del componente SEO
 export interface SeoProps {
     title: string;
     description: string;
