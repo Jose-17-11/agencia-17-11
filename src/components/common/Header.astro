@@ -1,9 +1,6 @@
 ---
-// 1. Definición de la interfaz de TypeScript para un elemento de navegación
-interface NavItem {
-    url: string;
-    text: string;
-}
+// 1. Definición de la interfaz de TypeScript previamente declarada
+import type { NavItem } from '../../types/common'; 
 
 // 2. Definición de la interfaz de las Props para el componente Header
 interface Props {
